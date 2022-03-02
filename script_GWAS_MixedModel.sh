@@ -16,19 +16,19 @@ gemma -bfile file -gk 1 -o file_K_matrix # -gk:  type of kinship/relatedness mat
 # results will be in out/ folder
 
 ## 2 - run gwas 
-gemma -bfile file -k  output/file_K_matrix.cXX.txt -lmm 4 -o gwas_gemma
+gemma -bfile file -k  output/file_K_matrix.cXX.txt -lmm 4 -o out_file
 
 
 ## 3- Manhattan plotplot in R
 cd out/
-# from the .assoc.txt extract chr,rs, ps and p_lrt
+# from the .assoc.txt file use only chr,rs, ps and p_lrt
 
 # in R with qqman package
 
 library(qqman)
 library(data.table)
 
-a <- fread("file.assoc.txt",select = c("chr", "rs", "ps","p_lrt"),data.table = F)
+a <- fread("out_file.assoc.txt",select = c("chr", "rs", "ps","p_lrt"),data.table = F)
 
 # Make the Manhattan plot on the gwasResults dataset
 pdf("manhatan.pdf")
