@@ -5,7 +5,7 @@
 # Input files from plink 
 
 file.bed # binary genotypes 
-file.bim # geno info
+file.bim # snp info
 file.fam # family and phenotype information. After the last column you can include 0 or 1 for binary traits or quatitative traits
 
 ## download and install gemma executable from https://github.com/genetics-statistics/GEMMA/releases
