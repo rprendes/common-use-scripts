@@ -30,7 +30,7 @@ library(data.table)
 
 a <- fread("out_file.assoc.txt",select = c("chr", "rs", "ps","p_lrt"),data.table = F)
 
-# Make the Manhattan plot on the gwasResults dataset
+# Make the Manhattan plot on the GWAS (a) dataset
 pdf("manhatan.pdf")
-manhattan(gwasResults, chr="chr", bp="ps", snp="rs", p="p_lrt" )
+manhattan(a, chr="chr", bp="ps", snp="rs", p="p_lrt" )
 dev.off()
